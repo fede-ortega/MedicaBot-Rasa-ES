@@ -1,4 +1,4 @@
-#Chatbot using Rasa for the medical domain - Project in Spanish
+# Chatbot using Rasa for the medical domain - Project in Spanish
 
 Notebook files for a chatbot in the medical domain to help patients in Spanish as part of the course contents of _Aplicaciones de la Lingüística Computacional_ (Applied Computational Linguistics).
 
