@@ -1,0 +1,313 @@
+version: "3.1"
+
+stories:
+
+- story: Funciones posología - AINE
+  steps:
+  - intent: informacion
+  - action: utter_preguntar
+  - intent: posologia_especif_aine
+  - action: utter_poso_aine
+  - action: utter_confirmar
+
+- story: Funciones posología - Corticoides
+  steps:
+  - intent: informacion
+  - action: utter_preguntar
+  - intent: posologia_especif_corti
+  - action: utter_poso_corti
+  - action: utter_confirmar
+
+
+- story: Posología - AINE
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: aine
+  - action: utter_poso_aine
+  - action: utter_confirmar
+
+- story: Posología - Corticoides
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: corticoides
+  - action: utter_poso_corti
+  - action: utter_confirmar
+
+- story: Expresión compleja - AINE
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: aine
+  - action: utter_cw_aine
+  - action: utter_confirmar
+
+- story: Expresión compleja - Corticoides
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: corticoides
+  - action: utter_cw_corti
+  - action: utter_confirmar
+
+- story: Uso fármaco - AINE
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: aine
+  - action: utter_uso_aine
+  - action: utter_afirmar
+
+- story: Uso fármaco - Corticoides
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: corticoides
+  - action: utter_uso_corti
+  - action: utter_afirmar
+
+
+- story: Posología, CW y Uso - AINE
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_poso_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_aine
+  - action: utter_afirmar
+
+
+- story: Posología, CW y Uso - Corticoides
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_poso_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_corti
+  - action: utter_afirmar
+
+- story: Posología, uso y CW - AINE
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_poso_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_aine
+  - action: utter_afirmar
+
+
+- story: Posología, uso y CW - Corticoides
+  steps:
+  - intent: posologia
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_poso_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_corti
+  - action: utter_afirmar
+
+
+- story: Uso, CW y posología - AINE
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_uso_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_aine
+  - action: utter_afirmar
+
+- story: Uso, CW y posología - Corticoides
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_uso_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_corti
+  - action: utter_afirmar
+
+- story: Uso, posología y CW - AINE
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_uso_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_aine
+  - action: utter_afirmar
+
+- story: Uso, posología y CW - Corticoides
+  steps:
+  - intent: uso_medicamento
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_uso_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: expresion_compleja
+  - action: utter_cw_corti
+  - action: utter_afirmar
+
+- story: CW, posología y uso - AINE
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_cw_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_aine
+  - action: utter_afirmar
+
+- story: CW, posología y uso - Corticoides
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_cw_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_corti
+  - action: utter_afirmar
+
+- story: CW, uso y posología - AINE
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: aine
+  - slot_was_set:
+    - farmacologia: aine
+  - action: utter_cw_aine
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_aine
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_aine
+  - action: utter_afirmar
+
+- story: CW, uso y posología - Corticoides
+  steps:
+  - intent: expresion_compleja
+    entities:
+    - farmacologia: corticoides
+  - slot_was_set:
+    - farmacologia: corticoides
+  - action: utter_cw_corti
+  - action: utter_confirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: uso_medicamento
+  - action: utter_uso_corti
+  - action: utter_afirmar
+  - intent: afirmar
+  - action: utter_afirmar
+  - intent: posologia
+  - action: utter_poso_corti
+  - action: utter_afirmar
+
