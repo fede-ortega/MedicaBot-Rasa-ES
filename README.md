@@ -9,4 +9,4 @@ Three websites have been important for documentation resources:
 2. SEFH (Spanish Society of Hospital Pharmacists).
 3. NIH (National Institutes of Health).
 
-Disclaimer: "The author assumes no responsibility or liability for any errors or omissions in the content of this project. The information contained in this site is provided on an "as is" basis with no guarantees of completeness, accuracy, usefulness or timeliness for the purposes of this project".
+Disclaimer: "The author assumes no responsibility or liability for any errors or omissions in the medical content of this project. The medical information contained in this site is provided on an "as is" basis with no guarantees of completeness, accuracy, usefulness or timeliness for the purposes of this project".
